@@ -3,7 +3,7 @@ require_once 'auth.php';
 requireLogin();
 
 $current_user = getCurrentUser();
-$page_title = 'Dashboard - Sistem Penggajian';
+$page_title = 'Dashboard - Zoya Cookies';
 
 // Start output buffering for content
 ob_start();

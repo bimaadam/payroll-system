@@ -14,7 +14,8 @@
   <link href="assets/css/nucleo-icons.css" rel="stylesheet" />
   <link href="assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
   <!-- CSS Files -->
   <link id="pagestyle" href="assets/css/soft-ui-dashboard.css?v=1.1.0" rel="stylesheet" />
   
@@ -169,7 +170,7 @@
           <div class="col-lg-6 mb-lg-0 mb-4">
             <div class="copyright text-center text-sm text-muted text-lg-start">
               © <script>document.write(new Date().getFullYear())</script>,
-              Sistem Penggajian - Made with <i class="fa fa-heart text-danger"></i> for better payroll management
+              Zoya Cookies <i class="fa fa-heart text-danger"></i> 
             </div>
           </div>
           <div class="col-lg-6">

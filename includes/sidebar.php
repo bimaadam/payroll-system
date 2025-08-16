@@ -17,8 +17,8 @@ function isActive($page_names) {
   <div class="sidenav-header">
     <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
     <a class="navbar-brand m-0" href="index.php">
-      <img src="assets/img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
-      <span class="ms-1 font-weight-bold">Sistem Penggajian</span>
+      <img src="assets/img/logos/logo.png" class="navbar-brand-img h-500" alt="main_logo">
+      <span class="ms-1 font-weight-bold">Zoya Cookies</span>
     </a>
   </div>
   <hr class="horizontal dark mt-0">
@@ -59,6 +59,15 @@ function isActive($page_names) {
             <i class="ni ni-money-coins text-success text-sm opacity-10"></i>
           </div>
           <span class="nav-link-text ms-1">Data Gaji</span>
+        </a>
+      </li>
+      <!-- Absensi -->
+       <li class="nav-item">
+        <a class="nav-link <?php echo isActive(['absensi', 'absensi_tambah', 'absensi_edit', 'absensi_hapus']); ?>" href="absensi.php">
+          <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+            <i class="ni ni-money-coins text-success text-sm opacity-10"></i>
+          </div>
+          <span class="nav-link-text ms-1">Data Absensi</span>
         </a>
       </li>
     </ul>
