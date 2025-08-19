@@ -23,7 +23,7 @@ ob_start();
           </div>
           <div class="col-4 text-end">
             <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-              <i class="ni ni-badge text-lg opacity-10" aria-hidden="true"></i>
+              <i class="bi bi-building text-lg opacity-10" aria-hidden="true"></i>
             </div>
           </div>
         </div>
@@ -43,7 +43,7 @@ ob_start();
           </div>
           <div class="col-4 text-end">
             <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-              <i class="ni ni-single-02 text-lg opacity-10" aria-hidden="true"></i>
+              <i class="bi bi-person text-lg opacity-10" aria-hidden="true"></i>
             </div>
           </div>
         </div>
@@ -63,7 +63,7 @@ ob_start();
           </div>
           <div class="col-4 text-end">
             <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-              <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+              <i class="bi bi-cash text-lg opacity-10" aria-hidden="true"></i>
             </div>
           </div>
         </div>
@@ -83,7 +83,7 @@ ob_start();
           </div>
           <div class="col-4 text-end">
             <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-              <i class="ni ni-chart-bar-32 text-lg opacity-10" aria-hidden="true"></i>
+              <i class="bi bi-bar-chart text-lg opacity-10" aria-hidden="true"></i>
             </div>
           </div>
         </div>
@@ -96,7 +96,7 @@ ob_start();
   <div class="col-12">
     <div class="card mb-4">
       <div class="card-header pb-0">
-        <h6>Selamat Datang di Sistem Penggajian</h6>
+        <h6>Selamat Datang <span><?php echo htmlspecialchars($current_user['username']); ?></span></h6>
       </div>
       <div class="card-body">
         <p class="text-sm">
@@ -107,7 +107,7 @@ ob_start();
           <div class="col-md-4">
             <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
               <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md me-3">
-                <i class="ni ni-badge text-white opacity-10"></i>
+                <i class="bi bi-person text-white opacity-10"></i>
               </div>
               <h6 class="mb-0">Data Jabatan</h6>
             </div>
@@ -115,7 +115,7 @@ ob_start();
           <div class="col-md-4">
             <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
               <div class="icon icon-shape bg-gradient-info shadow text-center border-radius-md me-3">
-                <i class="ni ni-single-02 text-white opacity-10"></i>
+                <i class="bi bi-person-add text-white opacity-10"></i>
               </div>
               <h6 class="mb-0">Data Karyawan</h6>
             </div>
@@ -123,7 +123,7 @@ ob_start();
           <div class="col-md-4">
             <div class="card card-body border card-plain border-radius-lg d-flex align-items-center flex-row">
               <div class="icon icon-shape bg-gradient-success shadow text-center border-radius-md me-3">
-                <i class="ni ni-money-coins text-white opacity-10"></i>
+                <i class="bi bi-cash text-white"></i>
               </div>
               <h6 class="mb-0">Data Gaji</h6>
             </div>

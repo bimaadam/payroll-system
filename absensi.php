@@ -36,6 +36,57 @@ ob_start();
   </tbody>
 </table>
 
+<script>
+$(document).ready(function() {
+    $.ajax({
+        url: 'api/absensi.php',
+        method: 'GET',
+        dataType: 'json',
+        success: function(response) {
+            if (response.data) {
+                let tableBody = '';
+                response.data.forEach(function(item) {
+                    tableBody += '<tr>';
+                    tableBody += '<td><div class="d-flex px-2 py-1"><div class="d-flex flex-column justify-content-center"><h6 class="mb-0 text-sm">' + item.kode_absensi + '</h6></div></div></td>';
+                    tableBody += '<td><p class="text-xs font-weight-bold mb-0">' + item.nama_karyawan + '</p></td>';
+                    tableBody += '<td><p class="text-xs font-weight-bold mb-0">' + item.nama_jabatan + '</p></td>';
+                    tableBody += '<td><p class="text-xs font-weight-bold mb-0">' + item.tanggal + '</p></td>';
+                    tableBody += '<td><p class="text-xs font-weight-bold mb-0">' + item.jam_masuk + '</p></td>';
+                    tableBody += '<td><p class="text-xs font-weight-bold mb-0">' + item.jam_pulang + '</p></td>';
+                    tableBody += '<td><p class="text-xs font-weight-bold mb-0">' + item.status + '</p></td>';
+                    tableBody += '<td class="align-middle">';
+                    tableBody += '<a href="absensi_edit.php?id=' + item.kode_absensi + '" class="btn btn-sm btn-outline-primary me-2"><i class="fas fa-edit"></i></a>';
+                    tableBody += '<button class="btn btn-sm btn-outline-danger" onclick="deleteAbsensi(\'" + item.kode_absensi + "\'\)"><i class="fas fa-trash"></i></button>';
+                    tableBody += '</td>';
+                    tableBody += '</tr>';
+                });
+                $('#absensiTableBody').html(tableBody);
+            }
+        },
+        error: function() {
+            console.error('Failed to load attendance data');
+        }
+    });
+});
+
+function deleteAbsensi(kode) {
+  Swal.fire({
+    title: 'Konfirmasi',
+    text: 'Apakah Anda yakin ingin menghapus data absensi ini?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#d33',
+    cancelButtonColor: '#3085d6',
+    confirmButtonText: 'Ya, Hapus!',
+    cancelButtonText: 'Batal'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      window.location.href = `absensi_hapus.php?id=${kode}`;
+    }
+  });
+}
+</script>
+
         </div>
       </div>
     </div>

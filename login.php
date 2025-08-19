@@ -34,119 +34,237 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="assets/img/favicon.png">
-  <title>Login - Zoya Cookies</title>
-  <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,800" rel="stylesheet" />
-  <!-- Nucleo Icons -->
-  <link href="assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="assets/css/nucleo-svg.css" rel="stylesheet" />
-  <!-- Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <!-- CSS Files -->
-  <link id="pagestyle" href="assets/css/soft-ui-dashboard.css?v=1.1.0" rel="stylesheet" />
-  <!-- SweetAlert2 -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</head>
+      <!--=============== REMIXICONS ===============-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
 
-<body class="">
-  <div class="container position-sticky z-index-sticky top-0">
-    <div class="row">
-      <div class="col-12">
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg blur border-radius-lg top-0 z-index-3 shadow position-absolute mt-4 py-2 start-0 end-0 mx-4">
-          <div class="container-fluid">
-            <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3" href="login.php">
-              Zoya Cookies
-            </a>
-            <div class="collapse navbar-collapse" id="navigation">
-              <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                  <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="login.php">
-                    <i class="fa fa-chart-pie opacity-6 text-dark me-1"></i>
-                    Dashboard
-                  </a>
-                </li>
-              </ul>
+      <!--=============== CSS ===============-->
+         <style>
+    /*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(0, 0%, 0%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --h1-font-size: 2rem;
+  --normal-font-size: 1rem;
+  --small-font-size: .813rem;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+input,
+button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== LOGIN ===============*/
+.login {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+}
+
+.login__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.login__form {
+  position: relative;
+  margin-inline: 1.5rem;
+  background-color: hsla(0, 0%, 100%, .01);
+  border: 2px solid hsla(0, 0%, 100%, .7);
+  padding: 2.5rem 1rem;
+  color: var(--white-color);
+  border-radius: 1rem;
+  backdrop-filter: blur(16px);
+}
+
+.login__title {
+  text-align: center;
+  font-size: var(--h1-font-size);
+  margin-bottom: 1.25rem;
+}
+
+.login__inputs, 
+.login__box {
+  display: grid;
+}
+
+.login__inputs {
+  row-gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.login__box {
+  grid-template-columns: 1fr max-content;
+  column-gap: .75rem;
+  align-items: center;
+  border: 2px solid hsla(0, 0%, 100%, .7);
+  padding-inline: 1.25rem;
+  border-radius: 4rem;
+}
+
+.login__input, 
+.login__button {
+  border: none;
+  outline: none;
+}
+
+.login__input {
+  width: 100%;
+  background: none;
+  color: var(--white-color);
+  padding-block: 1rem;
+}
+
+.login__input::placeholder {
+  color: var(--white-color);
+}
+
+.login__box i {
+  font-size: 1.25rem;
+}
+
+.login__check, 
+.login__check-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login__check {
+  margin-bottom: 1rem;
+  font-size: var(--small-font-size);
+}
+
+.login__check-box {
+  column-gap: .5rem;
+}
+
+.login__check-input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--white-color);
+}
+
+.login__forgot {
+  color: var(--white-color);
+}
+
+.login__forgot:hover {
+  text-decoration: underline;
+}
+
+.login__button {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--white-color);
+  border-radius: 4rem;
+  color: var(--black-color);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.login__register {
+  font-size: var(--small-font-size);
+  text-align: center;
+}
+
+.login__register a {
+  color: var(--white-color);
+  font-weight: 500;
+}
+
+.login__register a:hover {
+  text-decoration: underline;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For medium devices */
+@media screen and (min-width: 576px) {
+  .login {
+    justify-content: center;
+  }
+  .login__form {
+    width: 420px;
+    padding-inline: 2.5rem;
+  }
+  .login__title {
+    margin-bottom: 2rem;
+  }
+}
+   </style>
+      <title>Login - Zoya Cookies</title>
+   </head>
+   <body>
+      <div class="login">
+         <img src="assets/img/login-bg.png" alt="image" class="login__bg">
+
+         <form method="POST" action="" class="login__form">
+            <h1 class="login__title">Login Zoya Admin</h1>
+
+            <div class="login__inputs">
+               <div class="login__box">
+                  <input type="text" placeholder="Username" required class="login__input" name="username">
+                  <i class="ri-mail-fill"></i>
+               </div>
+
+               <div class="login__box">
+                  <input type="password" placeholder="Password" required class="login__input" name="password">
+                  <i class="ri-lock-2-fill"></i>
+               </div>
             </div>
-          </div>
-        </nav>
-        <!-- End Navbar -->
+
+            <div class="login__check">
+               <div class="login__check-box">
+                  <input type="checkbox" class="login__check-input" id="user-check">
+                  <label for="user-check" class="login__check-label">Remember me</label>
+               </div>
+
+               <a href="#" class="login__forgot">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="login__button">Login</button>
+
+            <div class="login__register">
+               Don't have an account? <a href="#">Register</a>
+            </div>
+         </form>
       </div>
-    </div>
-  </div>
-  <main class="main-content mt-0">
-    <section>
-      <div class="page-header min-vh-100">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0 mx-auto">
-              <div class="card card-plain">
-                <div class="card-header pb-0 text-start">
-                  <h4 class="font-weight-bolder">Masuk</h4>
-                  <p class="mb-0">Masukkan username dan password Anda untuk mengakses sistem</p>
-                </div>
-                <div class="card-body">
-                  <?php if ($error_message): ?>
-                  <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <span class="alert-icon"><i class="ni ni-like-2"></i></span>
-                    <span class="alert-text"><?php echo htmlspecialchars($error_message); ?></span>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <?php endif; ?>
-                  
-                  <form role="form" method="POST" action="login.php">
-                    <div class="mb-3">
-                      <input type="text" class="form-control form-control-lg" placeholder="Username" name="username" aria-label="Username" required>
-                    </div>
-                    <div class="mb-3">
-                      <input type="password" class="form-control form-control-lg" placeholder="Password" name="password" aria-label="Password" required>
-                    </div>
-                    <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" id="rememberMe">
-                      <label class="form-check-label" for="rememberMe">Ingat saya</label>
-                    </div>
-                    <div class="text-center">
-                      <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Masuk</button>
-                    </div>
-                  </form>
-                </div>
-                <div class="card-footer text-center pt-0 px-lg-2 px-1">
-                  <p class="mb-4 text-sm mx-auto">
-                    <small>Default login: <strong>admin</strong> / <strong>admin123</strong></small>
-                  </p>
-                  <p class="mb-4 text-sm mx-auto">
-                    <a href="auth.php?init_users=1" class="text-primary text-gradient font-weight-bold">Setup Database Users</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
-              <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg'); background-size: cover;">
-                <span class="mask bg-gradient-primary opacity-6"></span>
-                <h4 class="mt-5 text-white font-weight-bolder position-relative">Zoya Cookies</h4>
-                <p class="text-white position-relative">Sistem penggajian yang memudahkan Anda dalam mengelola data jabatan, karyawan, dan gaji dengan interface yang modern dan user-friendly.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <!--   Core JS Files   -->
-  <script src="assets/js/core/popper.min.js"></script>
-  <script src="assets/js/core/bootstrap.min.js"></script>
-  <script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script src="assets/js/soft-ui-dashboard.min.js?v=1.1.0"></script>
-</body>
-
+   </body>
 </html>

@@ -101,6 +101,25 @@ function createTables() {
     } else {
         echo "Error creating table gaji: " . $conn->error . "<br>";
     }
+
+    // Create absensi table
+    $sql_absensi = "CREATE TABLE IF NOT EXISTS absensi (
+        kode_absensi VARCHAR(10) PRIMARY KEY,
+        id_karyawan VARCHAR(10),
+        tanggal DATE NOT NULL,
+        jam_masuk TIME,
+        jam_pulang TIME,
+        status ENUM('Hadir', 'Sakit', 'Izin', 'Alpha') NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+        FOREIGN KEY (id_karyawan) REFERENCES karyawan(id_karyawan) ON DELETE CASCADE
+    )";
+
+    if ($conn->query($sql_absensi) === TRUE) {
+        echo "Table absensi created successfully<br>";
+    } else {
+        echo "Error creating table absensi: " . $conn->error . "<br>";
+    }
 }
 
 // Initialize database and tables if needed

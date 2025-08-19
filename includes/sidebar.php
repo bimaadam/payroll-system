@@ -29,7 +29,7 @@ function isActive($page_names) {
       <li class="nav-item">
         <a class="nav-link <?php echo isActive(['dashboard', 'index']); ?>" href="dashboard.php">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+            <i class="bi bi-speedometer text-primary text-sm opacity-10"></i>
           </div>
           <span class="nav-link-text ms-1">Dashboard</span>
         </a>
@@ -38,7 +38,7 @@ function isActive($page_names) {
       <li class="nav-item">
         <a class="nav-link <?php echo isActive(['jabatan', 'jabatan_tambah', 'jabatan_edit', 'jabatan_hapus']); ?>" href="jabatan.php">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="ni ni-badge text-warning text-sm opacity-10"></i>
+            <i class="bi bi-bar-chart-line text-warning text-sm opacity-10"></i>
           </div>
           <span class="nav-link-text ms-1">Data Jabatan</span>
         </a>
@@ -47,7 +47,7 @@ function isActive($page_names) {
       <li class="nav-item">
         <a class="nav-link <?php echo isActive(['karyawan', 'karyawan_tambah', 'karyawan_edit', 'karyawan_hapus']); ?>" href="karyawan.php">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="ni ni-single-02 text-info text-sm opacity-10"></i>
+            <i class="bi bi-person text-info text-sm opacity-10"></i>
           </div>
           <span class="nav-link-text ms-1">Data Karyawan</span>
         </a>
@@ -56,7 +56,7 @@ function isActive($page_names) {
       <li class="nav-item">
         <a class="nav-link <?php echo isActive(['gaji', 'gaji_tambah', 'gaji_edit', 'gaji_hapus']); ?>" href="gaji.php">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="ni ni-money-coins text-success text-sm opacity-10"></i>
+            <i class="bi bi-cash-coin text-success text-sm opacity-10"></i>
           </div>
           <span class="nav-link-text ms-1">Data Gaji</span>
         </a>
@@ -65,7 +65,7 @@ function isActive($page_names) {
        <li class="nav-item">
         <a class="nav-link <?php echo isActive(['absensi', 'absensi_tambah', 'absensi_edit', 'absensi_hapus']); ?>" href="absensi.php">
           <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-            <i class="ni ni-money-coins text-success text-sm opacity-10"></i>
+            <i class="bi bi-card-list text-success text-sm opacity-10"></i>
           </div>
           <span class="nav-link-text ms-1">Data Absensi</span>
         </a>
@@ -78,7 +78,7 @@ function isActive($page_names) {
       <div class="full-background" style="background-image: url('assets/img/curved-images/white-curved.jpg')"></div>
       <div class="card-body text-start p-3 w-100">
         <div class="icon icon-shape icon-sm bg-white shadow text-center mb-3 d-flex align-items-center justify-content-center border-radius-md">
-          <i class="ni ni-single-02 text-dark text-sm opacity-10"></i>
+          <i class="bi bi-person text-dark"></i>
         </div>
         <div class="docs-info">
           <h6 class="text-white up mb-0"><?php echo htmlspecialchars($current_user['full_name']); ?></h6>
