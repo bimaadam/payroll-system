@@ -183,4 +183,8 @@ http://localhost/penggajian/setup.php
 
 ---
 
+## Preview
+
+<img src="assets/img/login-bg.png" alt="image"></img>
+
 **Developed with Bima Adam ❤️ using PHP and Soft UI Dashboard**
