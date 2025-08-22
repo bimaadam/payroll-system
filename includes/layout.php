@@ -171,10 +171,10 @@
           <div class="col-lg-6 mb-lg-0 mb-4">
             <div class="copyright text-center text-sm text-muted text-lg-start">
               © <script>document.write(new Date().getFullYear())</script>,
-              Zoya Cookies <i class="fa fa-heart text-danger"></i> 
+              Zoya Cookies 
             </div>
           </div>
-          <div class="col-lg-6">
+          <!-- <div class="col-lg-6">
             <ul class="nav nav-footer justify-content-center justify-content-lg-end">
               <li class="nav-item">
                 <a href="#" class="nav-link text-muted">About</a>
@@ -186,7 +186,7 @@
                 <a href="#" class="nav-link text-muted">License</a>
               </li>
             </ul>
-          </div>
+          </div> -->
         </div>
       </div>
     </footer>

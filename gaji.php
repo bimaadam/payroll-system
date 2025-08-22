@@ -86,10 +86,13 @@ function loadGaji() {
                 <p class="text-xs font-weight-bold mb-0 text-success">Rp ${formatCurrency(totalGaji)}</p>
               </td>
               <td class="align-middle">
-                <a href="gaji_edit.php?id=${gaji.kode_gaji}" class="btn btn-sm btn-outline-primary me-2">
+                <a href="gaji_edit.php?id=${gaji.kode_gaji}" class="btn btn-sm btn-outline-primary me-2" title="Edit Data Gaji">
                   <i class="fas fa-edit"></i>
                 </a>
-                <button class="btn btn-sm btn-outline-danger" onclick="deleteGaji('${gaji.kode_gaji}')">
+                <a href="slip_gaji.php?id=${gaji.kode_gaji}" target="_blank" class="btn btn-sm btn-outline-info me-2" title="Cetak Slip Gaji">
+                  <i class="fas fa-print"></i>
+                </a>
+                <button class="btn btn-sm btn-outline-danger" onclick="deleteGaji('${gaji.kode_gaji}')" title="Hapus Data Gaji">
                   <i class="fas fa-trash"></i>
                 </button>
               </td>
