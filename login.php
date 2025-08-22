@@ -233,7 +233,7 @@ img {
    </head>
    <body>
       <div class="login">
-         <img src="assets/img/login-bg.png" alt="image" class="login__bg">
+         <img src="assets/img/login-bg.jpg" alt="image" class="login__bg">
 
          <form method="POST" action="" class="login__form">
             <h1 class="login__title">Login Zoya Admin</h1>
